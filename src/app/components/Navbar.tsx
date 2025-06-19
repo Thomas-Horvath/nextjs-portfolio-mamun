@@ -5,9 +5,10 @@ import { SunIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react'
+import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
-    const theme = "dark";
+    const { theme, toggleTheme } = useTheme();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
     const pathname = usePathname();
     const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -25,7 +26,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className='fixed w-full bg-dark/80 backdrop-blur-sm z-50'>
+        <nav className='fixed w-full bg-white/80 dark:bg-dark/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-700 transition-colors shadow-sm'>
             <div className="container max-w-7xl mx-auto px-4">
 
 
@@ -46,8 +47,8 @@ const Navbar = () => {
                         })}
 
                         <button
-                            onClick={() => setIsDarkMode(!isDarkMode)}
-                            className='p-2 rounded-lg hover:bg-gray-100 text-primary cursor-pointer dark:hover:bg-gray-800 transition-colors'>
+                            onClick={toggleTheme}
+                            className='p-2 rounded-lg hover:bg-gray-100 dark:text-white cursor-pointer hover:text-primary dark:hover:bg-gray-800 transition-colors'>
                             {theme === 'dark' ? (
                                 <SunIcon className='w-5 h-5' />
                             ) : (
@@ -91,7 +92,7 @@ const Navbar = () => {
                             ))}
                             <div>
                                 <button
-                                    onClick={() => setIsDarkMode(!isDarkMode)}
+                                    onClick={toggleTheme}
                                     className='flex items-center py-2  hover:text-primary cursor-pointer transition-colors'>
                                     {theme === 'dark' ? (
                                         
