@@ -13,7 +13,7 @@ const Hero = () => {
                     />
                 </div>
 
-                <h1 className="text-4xl md:text-6xl font-bold mb-6">Hi, I'm <span className='text-primary'>John Doe</span></h1>
+                <h1 className="text-4xl md:text-6xl font-bold mb-6">Hi, I&apos;m <span className='text-primary'>John Doe</span></h1>
 
                 <p className='text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8'>Full stack developer | UI/UX Enthusiast | Open Source Contributor</p>
 
