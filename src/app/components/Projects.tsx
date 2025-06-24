@@ -1,7 +1,5 @@
 import { projects } from '@/contents/projects'
-import { section } from 'framer-motion/client'
 import React from 'react'
-import { Project } from '../../types/index';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
