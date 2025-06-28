@@ -15,6 +15,10 @@ const Navbar = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
+    const closeMobileMenu = () => {
+        setIsMobileMenuOpen(false);
+    }
+
     const menuItems = [
         { label: 'Home', href: '/' },
         { label: 'About', href: '/about' },
@@ -31,7 +35,7 @@ const Navbar = () => {
 
                 {/* desktop menu */}
                 <div className="flex items-center justify-between h-16">
-                    <Link href="/" className='text-xl font-bold text-primary' >Devfolio&trade;</Link>
+                    <Link href="/" onClick={closeMobileMenu} className='text-xl font-bold text-primary' >Devfolio&trade;</Link>
 
 
                     <div className='hidden md:flex items-center space-x-8'>
